@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Domojo</title>
+
+  <!-- App / fullscreen meta -->
+  <meta name="theme-color" content="#0f0f0f">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+
+  <link rel="stylesheet" href="../../static/assets/styles/main.css">
+  <link rel="stylesheet" href="../../static/assets/styles/bootstrap/css/bootstrap.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- HOME SCREEN -->
+  <section class="screen active" id="home">
+    <header class="top">
+      <h1>Domojo</h1>
+      <p>Find trusted domestic workers</p>
+    </header>
+
+    <div class="search">
+      <input type="text" placeholder="Search by skill or location" />
+    </div>
+
+    <section class="categories">
+      <h2>Categories</h2>
+      <div class="chips">
+        <span class="chip active">All</span>
+        <span class="chip">Househelp</span>
+        <span class="chip">Nanny</span>
+        <span class="chip">Cook</span>
+        <span class="chip">Skilled Trader</span>
+        <span class="chip">Technology</span>
+        <span class="chip">Healthcare</span>
+        <span class="chip">Engineering</span>
+        <span class="chip">Education</span>
+        <span class="chip">Transportation</span>
+        <span class="chip">Creative,Media&Arts</span>
+      </div>
+    </section>
+
+    <section class="workers">
+      <div class="worker">
+        <img src="https://i.pravatar.cc/150?img=32">
+        <div class="info">
+          <h3>Grace Wanjiru</h3>
+          <p>Househelp • Nairobi</p>
+          <div class="meta">
+            <span>⭐ 4.6</span>
+            <span class="price">KSh 25,000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="worker">
+        <img src="https://www.aiavatar.cc/_next/static/media/1-DPhoto.62df25a7.webp">
+        <div class="info">
+          <h3>Felix Kamau</h3>
+          <p>Doctor • Nairobi</p>
+          <div class="meta">
+            <span>⭐ 4.3</span>
+            <span class="price">KSh 95,000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="worker">
+        <img src="https://www.aiavatar.cc/_next/static/media/7-RealisticComic.75e2f26b.webp">
+        <div class="info">
+          <h3>Timothy Evans</h3>
+          <p>Driver • Nairobi</p>
+          <div class="meta">
+            <span>⭐ 4.2</span>
+            <span class="price">KSh 75,000</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="worker">
+        <img src="https://www.aiavatar.cc/_next/static/media/4-RealisticOilPainting.9b11ae44.webp">
+        <div class="info">
+          <h3>Lavender Stacy</h3>
+          <p>Real_Estate • Nairobi</p>
+          <div class="meta">
+            <span>⭐ 3.9</span>
+            <span class="price">KSh 345,000</span>
+          </div>
+        </div>
+      </div>
+      <div class="worker">
+        <img src="https://i.pravatar.cc/150?img=47">
+        <div class="info">
+          <h3>Mary Akinyi</h3>
+          <p>Nanny • Kisumu</p>
+          <div class="meta">
+            <span>⭐ 4.8</span>
+            <span class="price">KSh 24,000</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- SEARCH SCREEN -->
+  <section class="screen" id="search">
+    <header class="top">
+      <h1>Search</h1>
+      <p>Find workers fast</p>
+    </header>
+  </section>
+
+  <!-- MESSAGES SCREEN -->
+  <section class="screen" id="messages">
+    <header class="top">
+      <h1>Messages</h1>
+      <p>No messages yet</p>
+    </header>
+  </section>
+
+  <!-- PROFILE SCREEN -->
+<!-- PROFILE SCREEN -->
+<section class="screen" id="profile">
+
+  <!-- Profile Home -->
+  <div class="profile-view active" id="profile-home">
+    <header class="top">
+      <h1>Profile</h1>
+      <p>Your account</p>
+    </header>
+
+    <div class="profile-card">
+      <img src="https://i.pravatar.cc/150?img=12">
+      <div>
+        <h3>Elisha</h3>
+        <p>Client account</p>
+      </div>
+    </div>
+
+    <div class="profile-list">
+      <div class="profile-item" data-target="details">My Details</div>
+      <div class="profile-item" data-target="certs">Certificates</div>
+      <div class="profile-item" data-target="reviews">Reviews</div>
+      <div class="profile-item" data-target="settings">Settings</div>
+    </div>
+  </div>
+
+  <!-- DETAILS -->
+  <div class="profile-view" id="details">
+    <div class="sub-header">
+      ← My Details
+    </div>
+    <div class="sub-content">
+      <p>Name: Elisha</p>
+      <p>Phone: 07********</p>
+      <p>Location: Kenya</p>
+    </div>
+  </div>
+
+  <!-- CERTIFICATES -->
+  <div class="profile-view" id="certs">
+    <div class="sub-header">
+      ← Certificates
+    </div>
+    <div class="sub-content">
+      <p>• National ID</p>
+      <p>• Police Clearance</p>
+      <p>• Training Certificate</p>
+    </div>
+  </div>
+
+  <!-- REVIEWS -->
+  <div class="profile-view" id="reviews">
+    <div class="sub-header">
+      ← Reviews
+    </div>
+    <div class="sub-content">
+      <p>⭐ 4.8 average rating</p>
+      <p>“Very reliable”</p>
+      <p>“Highly recommended”</p>
+    </div>
+  </div>
+
+  <!-- SETTINGS -->
+  <div class="profile-view" id="settings">
+    <div class="sub-header">
+      ← Settings
+    </div>
+    <div class="sub-content">
+      <p>Change password</p>
+      <p>Logout</p>
+    </div>
+  </div>
+
+</section>
+
+
+  <!-- BOTTOM NAV -->
+  <nav class="nav">
+    <a href="index.html" class="active">🏠HOME</a>
+    <a href="search.html">🔍SEARCH</a>
+    <a href="messages.html">💬MESSAGES</a>
+    <a href="profile.html">👤PROFILE</a>
+  </nav>
+
+</div>
+
+<script src="../../static/assets/styles/bootstrap/js/bootstrap.bundle.js"></script>
+</body>
+</html>

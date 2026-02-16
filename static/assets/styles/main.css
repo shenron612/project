@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+}
+
+body {
+  background: #000;
+}
+
+.app {
+  background: #0f0f0f;
+  color: #fff;
+  min-height: 100vh;
+  padding-bottom: 70px;
+}
+
+/* Screens container behavior */
+.screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  padding-bottom: 80px;
+  background: #0f0f0f;
+
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+}
+
+.screen.active {
+  transform: translateX(0);
+}
+
+.screen.left {
+  transform: translateX(-100%);
+}
+
+
+/* Header */
+.top {
+  padding: 20px;
+}
+
+.top h1 {
+  font-size: 26px;
+}
+
+.top p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* Search */
+.search {
+  padding: 0 20px;
+}
+
+.search input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  background: #1c1c1c;
+  color: #fff;
+}
+
+/* Categories */
+.categories {
+  padding: 20px;
+}
+
+.categories h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.chips {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+}
+
+.chip {
+  background: #1c1c1c;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+}
+
+.chip.active {
+  background: #f4c430;
+  color: #000;
+}
+
+/* Workers */
+.workers {
+  padding: 0 20px;
+}
+
+.worker {
+  display: flex;
+  gap: 14px;
+  background: #1c1c1c;
+  border-radius: 18px;
+  padding: 14px;
+  margin-bottom: 14px;
+}
+
+.worker img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.info h3 {
+  font-size: 15px;
+}
+
+.info p {
+  font-size: 13px;
+  color: #aaa;
+}
+
+.meta {
+  display: flex;
+  justify-content: space-between;
+  width: 180px;
+}
+
+.price {
+  color: #f4c430;
+}
+
+/* Bottom nav */
+.nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 64px;
+  background: #111;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 22px;
+}
+
+.nav span {
+  color: #666;
+  cursor: pointer;
+}
+
+.nav .active {
+  color: #f4c430;
+}
+.app {
+  position: relative;
+  overflow-x: hidden;
+}
+/* Profile */
+.profile-card {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  background: #1c1c1c;
+  margin: 20px;
+  padding: 14px;
+  border-radius: 18px;
+}
+
+.profile-card img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.profile-list {
+  margin: 20px;
+}
+
+.profile-item {
+  padding: 16px;
+  border-bottom: 1px solid #222;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+/* Profile sub views */
+.profile-view {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: calc(100vh - 64px);
+  background: #0f0f0f;
+
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+}
+
+.profile-view.active {
+  transform: translateX(0);
+}
+
+.sub-header {
+  padding: 20px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sub-content {
+  padding: 20px;
+  font-size: 14px;
+  color: #ccc;
+}
