@@ -219,3 +219,15 @@ def about(request):
     Renders the standalone About page.
     """
     return render(request, 'about.html')
+
+def terms(request):
+    return render(request, 'terms.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
+def careers(request):
+    return render(request, 'careers.html')
+
+def privacy(request):
+    return render(request, 'privacy.html')
