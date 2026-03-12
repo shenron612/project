@@ -12,4 +12,5 @@ urlpatterns = [
     path('make-payment/', views.make_payment, name='make_payment'),
     path('stk-push/', views.stk_push, name='stk_push'),
     path('mpesa-callback/', views.mpesa_callback, name='mpesa_callback'),
+    path('about/', views.about, name='about'),
 ]
