@@ -14,11 +14,6 @@ from django.views.decorators.csrf import csrf_exempt
 from skillsync.forms import RegisterForm
 from skillsync.models import User
 
-
-# ─────────────────────────────────────────────
-#  CORE AUTH VIEWS
-# ─────────────────────────────────────────────
-
 def dashboard(request):
     profiles = User.objects.all().order_by('-date_joined')
     return render(request, 'dashboard.html', {
@@ -69,11 +64,6 @@ def user_logout(request):
     logout(request)
     return redirect('dashboard')
 
-
-# ─────────────────────────────────────────────
-#  WORKER SEARCH
-# ─────────────────────────────────────────────
-
 def search_workers(request):
     query = request.GET.get('q', '').strip()
     users = []
@@ -100,11 +90,6 @@ def search_workers(request):
         ]
     })
 
-
-# ─────────────────────────────────────────────
-#  M-PESA HELPERS
-# ─────────────────────────────────────────────
-
 def get_mpesa_token():
     consumer_key    = settings.MPESA_CONSUMER_KEY
     consumer_secret = settings.MPESA_CONSUMER_SECRET
@@ -123,11 +108,6 @@ def get_password_and_timestamp():
     raw       = f"{shortcode}{passkey}{timestamp}"
     password  = base64.b64encode(raw.encode()).decode()
     return password, timestamp
-
-
-# ─────────────────────────────────────────────
-#  PAYMENT VIEWS
-# ─────────────────────────────────────────────
 
 @login_required
 def make_payment(request):

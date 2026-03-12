@@ -73,8 +73,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'skillsync.User'
 
-# ── M-Pesa Daraja Settings ──
-# Replace these with your actual credentials from developer.safaricom.co.ke
 MPESA_CONSUMER_KEY    = 'nRSMGcOCiGtJSuTnkAstTcoY8mlhvqN4qCm8j0JvYfy3WUBe'
 MPESA_CONSUMER_SECRET = 'ebEHPGnUzwR9cONGjAewxCkMlvhIGIWCXTJMuvYQDVCuxes4CMZG0XKaiGLl0FHx'
 MPESA_SHORTCODE       = '174379'
