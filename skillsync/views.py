@@ -211,3 +211,9 @@ def careers(request):
 
 def privacy(request):
     return render(request, 'privacy.html')
+
+def report_dispute(request):
+    return render(request, 'report_dispute.html', {'user': request.user})
+
+def hirelink_care(request):
+    return render(request, 'hirelink_care.html', {'user': request.user})

@@ -17,5 +17,6 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('careers/', views.careers, name='careers'),
     path('privacy/', views.privacy, name='privacy'),
-
+    path('hirelink-care/', views.hirelink_care, name='hirelink_care'),
+    path('report-dispute/', views.report_dispute, name='report_dispute'),
 ]
