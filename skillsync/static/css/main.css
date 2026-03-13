@@ -233,3 +233,16 @@ footer { padding: 48px; border-top: 1px solid var(--border); display: flex; alig
   .form-row { flex-direction: column; }
   .all-profiles-grid { grid-template-columns: 1fr; }
 }
+
+.btn-delete-account {
+  font-size: 0.78rem; padding: 4px 14px;
+  border-radius: 8px;
+  border: 1px solid rgba(239,83,80,0.4);
+  background: transparent; color: #ef5350;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600; cursor: pointer; transition: all 0.2s;
+}
+.btn-delete-account:hover {
+  background: rgba(239,83,80,0.1);
+  border-color: #ef5350;
+}

@@ -25,6 +25,7 @@
       <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px;">
         <span style="font-size:0.85rem;font-weight:600;color:#f5c518;">👋 Welcome, {{ user.full_name }}</span>
         <a href="/logout/" class="btn-outline" style="font-size:0.78rem;padding:4px 14px;">Logout</a>
+        <button onclick="openDeleteModal()" style="font-size:0.78rem;padding:4px 14px;border-radius:8px;border:1px solid rgba(239,83,80,0.4);background:transparent;color:#ef5350;font-family:'DM Sans',sans-serif;font-weight:600;cursor:pointer;">Delete Account</button>
       </div>
     {% else %}
       <button class="btn-outline" onclick="openModal('login')">Sign In</button>
@@ -489,6 +490,48 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   });
 });
+function openDeleteModal()  { document.getElementById('deleteModal').classList.add('open'); }
+function closeDeleteModal() { document.getElementById('deleteModal').classList.remove('open'); document.getElementById('deletePassword').value = ''; document.getElementById('deleteStatus').textContent = ''; }
+
+async function confirmDelete() {
+  const password = document.getElementById('deletePassword').value;
+  const status   = document.getElementById('deleteStatus');
+  if (!password) { status.textContent = '⚠️ Please enter your password.'; return; }
+  status.textContent = 'Deleting...';
+  try {
+    const res  = await fetch('/delete-account/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'X-CSRFToken': getCookie('csrftoken') },
+      body: JSON.stringify({ password }),
+    });
+    const data = await res.json();
+    if (data.success) {
+      status.style.color = '#4caf50';
+      status.textContent = '✅ Account deleted. Redirecting...';
+      setTimeout(() => window.location.href = '/', 1500);
+    } else {
+      status.textContent = '❌ ' + data.error;
+    }
+  } catch (err) {
+    status.textContent = '❌ Something went wrong.';
+  }
+}
 </script>
+<div class="modal-overlay" id="deleteModal">
+  <div class="modal" style="max-width:400px;">
+    <button class="modal-close" onclick="closeDeleteModal()">✕</button>
+    <h2 style="color:#ef5350;">⚠️ DELETE ACCOUNT</h2>
+    <p>This is <strong style="color:#ef5350;">permanent</strong> and cannot be undone. All your data will be erased.</p>
+    <div class="form-group" style="margin-top:16px;">
+      <label>Confirm your password to proceed</label>
+      <input type="password" id="deletePassword" placeholder="Enter your password" />
+    </div>
+    <div style="display:flex;gap:10px;margin-top:8px;">
+      <button class="btn-outline" onclick="closeDeleteModal()" style="flex:1;">Cancel</button>
+      <button onclick="confirmDelete()" style="flex:1;padding:14px;border-radius:10px;background:#ef5350;color:#fff;font-family:'DM Sans',sans-serif;font-size:0.95rem;font-weight:700;border:none;cursor:pointer;">Yes, Delete</button>
+    </div>
+    <div id="deleteStatus" style="margin-top:12px;font-size:0.85rem;text-align:center;color:#ef5350;"></div>
+  </div>
+</div>
 </body>
 </html>

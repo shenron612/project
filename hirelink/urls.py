@@ -19,4 +19,5 @@ urlpatterns = [
     path('privacy/', views.privacy, name='privacy'),
     path('hirelink-care/', views.hirelink_care, name='hirelink_care'),
     path('report-dispute/', views.report_dispute, name='report_dispute'),
+    path('delete-account/', views.delete_account, name='delete_account'),
 ]

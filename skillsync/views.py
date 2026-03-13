@@ -217,3 +217,20 @@ def report_dispute(request):
 
 def hirelink_care(request):
     return render(request, 'hirelink_care.html', {'user': request.user})
+
+@login_required
+def delete_account(request):
+    if request.method == 'POST':
+        try:
+            data     = json.loads(request.body)
+            password = data.get('password', '')
+            user     = authenticate(request, username=request.user.email, password=password)
+            if user is not None:
+                logout(request)
+                user.delete()
+                return JsonResponse({'success': True})
+            else:
+                return JsonResponse({'success': False, 'error': 'Incorrect password.'})
+        except Exception as e:
+            return JsonResponse({'success': False, 'error': str(e)}, status=500)
+    return redirect('dashboard')
